@@ -329,3 +329,45 @@ input[type="range"] {
 .rarity-blue   { background: #3498db; }
 .rarity-orange { background: #e67e22; }
 .rarity-purple { background: #9b59b6; }
+
+.cafe-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.cafe-name-row input {
+  width: 180px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: 2px solid #666;
+  transition: 0.2s;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.cafe-name-row input:hover {
+  border-color: #333;
+}
+
+.cafe-name-row input:focus {
+  outline: none;
+  border-color: #4a6cf7;
+}
+
+.cafe-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: center;
+  margin: 0 0 8px 0;
+  font-family: inherit;
+}
+
+.total-point-section .cafe-name {
+  margin-bottom: 8px;
+  color: var(--text-muted);
+  font-weight: 500;
+}

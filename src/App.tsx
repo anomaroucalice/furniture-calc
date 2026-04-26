@@ -34,6 +34,8 @@ export default function App() {
     purple: 0,
   });
 
+  const [cafeName, setCafeName] = useState("");
+
   const [isCalculated, setIsCalculated] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
 
@@ -76,6 +78,7 @@ export default function App() {
       orange: 0,
       purple: 0,
     });
+    setCafeName("");
   };
 
   const diff = currentPt - requiredPt;
@@ -119,10 +122,23 @@ return (
 
     {/* 本文 */}
     <div className="content">
-      {/* ↓ ここに既存のUI全部 */}
       
 
       {/* 入力 */}
+  <div className="section">
+  <h2>カフェ名（任意）</h2>
+
+  <div className="cafe-name-row">
+    <span></span>
+
+    <input
+      type="text"
+      placeholder="（例：モモフレカフェ）"
+      value={cafeName}
+      onChange={(e) => setCafeName(e.target.value)}
+    />
+  </div>
+</div>
       <div className="section">
         <h2>必要家具数</h2>
         {rarities.map((r) => (
@@ -153,6 +169,11 @@ return (
               {isCalculated && (
                 <>
         <div className="section total-point-section">
+{cafeName && (
+  <p className="cafe-name">
+    {cafeName}
+  </p>
+)}
           <h2>合計コスト</h2>
           <p className="total-point">{requiredPt} <span>pt</span></p>
         </div>
